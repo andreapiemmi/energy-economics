@@ -1,0 +1,20 @@
+# Ignore virtual environment
+venv/
+
+# Ignore data folder
+data/
+
+# Ignore typical Python cache and temporary files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+*.db
+*.log
+
+# Ignore Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore VSCode settings if you use it
+.vscode/
