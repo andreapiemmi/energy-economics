@@ -2,7 +2,7 @@
 venv/
 
 # Ignore data folder
-data/
+# data/ - No, because I need it in the git repository 
 
 # Ignore typical Python cache and temporary files
 __pycache__/
