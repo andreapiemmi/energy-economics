@@ -2,7 +2,9 @@
 venv/
 
 # Ignore data folder
-# data/ - No, because I need it in the git repository 
+# data/ - No, because I need it in the git repository and it very light  
+# Ignore my notes folder 
+notes/
 
 # Ignore typical Python cache and temporary files
 __pycache__/
