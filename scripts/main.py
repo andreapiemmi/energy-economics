@@ -5,6 +5,7 @@ from src.regression_models import predict_IPI_OutOfSample, predict_Price_OutOfSa
 from src.utils.utils import plot_time_series, MAPE
 import plotly.io as pio
 pio.renderers.default = 'browser'
+import webbrowser
 
 
 # 1st Stage Regression - logIPI over GDP growth, logGas Price, logCO2 EUA Price and Dummy_22 
@@ -18,6 +19,21 @@ Demand_2nd_Stage = run_2ndStage_regression_Demand()
 model_summaries = {'IPI_1stStage': IPI_1st_Stage['model'].summary(), 
                    'Price_1stStage': Price_1st_Stage['model'].summary(), 
                    'Demand_2ndStage': Demand_2nd_Stage['model'].summary()}
+html_content = ""
+
+for name, summary in model_summaries.items():
+    html_content += f"<h2>{name}</h2>"
+    html_content += summary.as_html()
+
+# Save to an HTML file
+output_path = 'model_summaries.html'
+with open(output_path, 'w') as f:
+    f.write(html_content)
+
+# Open in default browser
+webbrowser.open(output_path)
+
+
 print(model_summaries.values())
 #Check that no direct impact of Gas Price and CO2 Price on Demand exists, other than 
 #the effect channeled via Industrial Production and the effect channeled through Energy Prices

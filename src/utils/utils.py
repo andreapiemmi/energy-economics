@@ -22,7 +22,8 @@ def plot_time_series(df_flat):
                       color='label',
                       line_dash='origin',
                       title=f'Time Series for {ind}',
-                      template='plotly_white').update_xaxes(tickmode='linear', dtick=1) 
+                      template='plotly_white').update_xaxes(tickmode='linear', dtick=1).
+                      update_layout(legend=dict(orientation="h", yanchor="top", y=-0.2, xanchor="center", x=0.5)) 
                       
                       for ind in df_flat.indicator.unique()}
 
